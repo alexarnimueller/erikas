@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smiles library parser</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <script src="dist/smiles-drawer.min.js"></script>
+    </head>
+    
+	<body>
+	  <h1>library smiles drawer</h1>
+	  <div class="input-container">
+	    <textarea id="input" cols="40" rows="4" placeholder="Enter several SMILES separated by newlines ..."></textarea>
+	    <input id="execute" type="button" value="draw" onclick="drawMols();"/>
+	  </div>
+
+	<div id='molcanvas' class="canvas-container"></div>
+
+        <script>
+		  function drawMols() {
+		    var molcanvas = document.getElementById('molcanvas');
+			/*remove remaining canvases*/
+			while (molcanvas.firstChild) {
+			    molcanvas.removeChild(molcanvas.firstChild);
+			}
+
+			var input = document.getElementById('input');
+			var mollist = input.value.split('\n');			
+			let options = { width: 300, height: 300 };
+            let smilesDrawer = new SmilesDrawer.Drawer(options);
+            
+            for (let i = 0; i < mollist.length; i += 1) {
+				let canvas = document.createElement('canvas');
+                canvas.setAttribute('id', 'canvas' + i);
+                canvas.setAttribute('alt', mollist[i].replace(/ /g, ''));
+                molcanvas.appendChild(canvas);
+
+                SmilesDrawer.parse(mollist[i].replace(/ /g, '').replace(/'/g, ''), function(tree) {
+                    smilesDrawer.draw(tree, 'canvas' + i, 'dark', false); 
+                }, function(err) {
+                    console.log(err);
+                });
+            }
+		  }
+        </script>
+    </body>
+</html>

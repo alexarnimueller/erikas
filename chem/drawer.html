@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>smiles parser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+  <link href="css/drawer.css" rel="stylesheet">
+  <script src="dist/smiles-drawer.js"></script>
+</head>
+
+<body>
+  <h1>smiles drawer</h1>
+  <div class="input-container">
+    <input id="input" type="text" class="parser" placeholder="Enter a valid SMILES string ..." />
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="output-canvas" width="500" height="500"></canvas>
+  </div>
+
+  <div class="settings-container">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <label for="textSize">text size</label>
+            <input class="slider" type="range" id="textSize" name="textSize" value="5" min="2" max="20" step="1" />
+          </td>
+          <td>
+              <label for="bondThickness">bond thickness</label>
+              <input class="slider" type="range" id="bondThickness" name="bondThickness" value="0.6" min="0.01" max="5" step="0.1" />
+            </td>
+          <td>
+            <label for="bondLength">bond length</label>
+            <input class="slider" type="range" id="bondLength" name="bondLength" value="16" min="1" max="99" step="1" />
+          </td>
+          <td>
+            <label for="shortBondLength">short bond length</label>
+            <input class="slider" type="range" id="shortBondLength" name="shortBondLength" value="85" min="0" max="100" step="1" />
+          </td>
+          <td>
+            <label for="bondSpacing">bond spacing</label>
+            <input class="slider" type="range" id="bondSpacing" name="bondSpacing" value="4" min="1" max="99" step="1" />
+          </td>
+          <td>
+            <label for="size">size</label>
+            <input class="slider" type="range" id="size" name="size" value="500" min="250" max="1000" step="1" />
+          </td>
+		  <td>
+			<label for="coloring">color</label>
+            <div class="selector">
+            <select id="coloring">
+			  <option value="dark" selected="selected">white</option>
+			  <option value="light">black</option>
+            </select>
+          </div>
+		  </td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+<script>
+    var input = document.getElementById('input');
+    var bondThicknessInput = document.getElementById('bondThickness')
+    var textSizeInput = document.getElementById('textSize');
+    var bondLengthInput = document.getElementById('bondLength');
+    var shortBondLengthInput = document.getElementById('shortBondLength');
+    var bondSpacingInput = document.getElementById('bondSpacing');
+    var sizeInput = document.getElementById('size');
+	var drawColor = document.getElementById('coloring');
+    var options = {
+      atomVisualization: 'default',
+	  color: drawColor.options[drawColor.selectedIndex].value
+    }
+
+    var smilesDrawer = new SmilesDrawer.Drawer(options);
+    var input = document.getElementById('input');
+    var log = document.getElementById('log');
+
+    function draw() {
+      let t = performance.now();
+
+      SmilesDrawer.parse(input.value, function (tree) {
+        smilesDrawer.draw(tree, 'output-canvas', options.color, false);
+        let td = performance.now() - t;
+        log.innerHTML = '&nbsp;';
+        log.style.visibility = 'hidden';
+
+      }, function (err) {
+        log.innerHTML = err;
+        log.style.visibility = 'visible';
+        console.log(err);
+      });      
+    }
+
+    function updateOptions() {
+      smilesDrawer = new SmilesDrawer.Drawer(options);
+      draw();
+    }
+
+    document.addEventListener('DOMContentLoaded', function (event) {
+      input.addEventListener('input', function () {
+        draw();
+      });
+
+      textSizeInput.addEventListener('input', function () {
+        options.fontSizeLarge = parseInt(textSizeInput.value);
+        options.fontSizeSmall = (3 / 5) * options.fontSizeLarge;
+        updateOptions();
+      });
+
+      bondThicknessInput.addEventListener('input', function () {
+        options.bondThickness = parseFloat(bondThicknessInput.value);
+        updateOptions();
+      });
+
+      bondLengthInput.addEventListener('input', function () {
+        options.bondLength = parseInt(bondLengthInput.value);
+        updateOptions();
+      });
+
+      shortBondLengthInput.addEventListener('input', function () {
+        options.shortBondLength = parseInt(shortBondLengthInput.value) / 100;
+        updateOptions();
+      });
+
+      bondSpacingInput.addEventListener('input', function () {
+        options.bondSpacing = parseInt(bondSpacingInput.value) / 10;
+        updateOptions();
+      });
+
+      sizeInput.addEventListener('input', function () {
+        options.width = parseInt(sizeInput.value);
+        options.height = parseInt(sizeInput.value);
+        updateOptions();
+      });
+	 
+	  drawColor.addEventListener('change', function () {
+		options.color = drawColor.options[drawColor.selectedIndex].value;	
+		updateOptions();
+	  }); 
+    });
+</script>
+</html>

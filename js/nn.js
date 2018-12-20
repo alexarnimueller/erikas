@@ -14,7 +14,7 @@ $(document).ready(function(){
 
     function RunNetworkAnim() {
         var currentScopeID = ++currentGlobalID;
-        var canvas = document.querySelector("#network");
+        var canvas = document.querySelector("#artcanvas");
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
         var ctx = canvas.getContext("2d");
