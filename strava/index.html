@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Start - Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script src="./Polyline.encoded.js"></script>
+</head>
+<body>
+<h2>Alex' Strava Heatmap</h2>
+<div id="mapid" style="width: 800px; height: 600px"></div>
+<script>
+    var map = L.map('mapid').setView([46.825, 8.224], 7);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(map);
+
+    var encodedRoutes = ["ecc`Hij}r@`D_@RrAzIfaBbGhPoHlu@yIjYYrPaCpNx@tZrIx`@nGxJdKlDjK{M`M|BrIgI|Hn@rHaKfLaAdCqNuCyInBsCfIjB~DmJ~N_RxOmKjFsJ|M_NvIsCnYeVr@_Dfy@{Lnm@gBpItD~IuIpHyO`DaCxNzEjUh_@fPdLdOvAtTgIZiPiAoDwQvGpIqPcC_[}CsM|CkGlHwCnHeJxIqXtEaC`CwPnEt@pDgGYoBmH_ArC{KnFaGeH@iDjEeGj@uArBmFiDjBInAmLjEcEN{IlB|@fB}FjHsH_@}KbBwJ{\\xIoIGcPvQ_V{AsIuJoKLaSpCs\\jNcWv@qTpLaQ}AcSpMiVsPqCTsEtEeGqEsu@vAcU{YqJmGeMgBaPjAkTrE_BjDy_@fEmElHcJfBmDnO}EvINlEkBlCMzF", "aec`H{c}r@`GbB~HzyA`GbQqHlt@mIrWeD~d@xAzYxHl]rDxI_Pf{@EdJ_M~l@lBfd@e@|FwNpIqKrBqG`GaB`JyO~a@gGm@gEfF_e@qn@{DqWgB}z@cDyMuLgNo@yMvAyJzLk\\`B}L_@cKlDeMfb@}v@fC}MbBaZtQcz@`HhEbJiNzAjBvBuDvGkT{JuLzY}^rMg[yBwB", "wdc`Hyc}r@bGbCxHbxAnCzExBlLgInt@wI|WQnPcCzRtA`X`Iv]pE~Inn@h_@~D`h@c@`E`C`IlA|OpIv[iA~b@jCXhMeJrHfAnLiLdJtGlBuDvOkJ`HyHzHRzdB|bAdVjWnStZnEd[{Dn@uGdGfDy@tC_FlDWyGi_@_c@yi@gRuN{[aOsz@uh@yIOc[jWkJ{EaMdMqHoAcMzI_CW`Aoc@cH{VuBeU}BwGb@qEaEeh@}m@c_@yEcJmIq`@cAsUbCqRPcO|ImYxHwv@cGiZ}LeeB", "wwc`H_~}r@sIkM_SvBgJ{JoFbLkH?os@}p@gOiJrDcVoKiCSwLoKi@{@h@f@pSsD~RSbQsD|TjCb`@oA`Qsb@be@_NoKnAwG"];
+
+    for (let encoded of encodedRoutes) {
+        var coordinates = L.Polyline.fromEncoded(encoded).getLatLngs();
+        console.log(coordinates[0]);
+        L.polyline(coordinates,{
+            color: 'red',
+            weight: 6,
+            opacity: 0.7,
+            lineJoin: 'round'
+        }).addTo(map);
+    }
+
+// zoom the map to the polyline
+map.fitBounds(polyline.getBounds());:wq
+</script>
+</body>
+</html>

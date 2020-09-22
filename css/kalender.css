@@ -1,0 +1,41 @@
+* { margin: 0; padding: 0; }
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: lightgray;
+}
+
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-size: 36px;
+	letter-spacing: 6px;
+	line-height: 40px;
+    color: darkslategrey;
+	display: block;
+	margin-top:20px;
+}
+
+.text a {
+	text-decoration: none;
+	color: darkslategrey;
+	padding-bottom: 1px;
+	border-bottom: 1px solid darkslategrey;
+}
+
+.text a:hover {
+	background: #ff0;
+	color: white;
+}

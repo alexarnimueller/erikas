@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Erikas Canape</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Erikas Canape Kitchen Bar Restaurant">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/paper.js"></script>
+    <script type="text/paperscript" src="js/canape2.js" canvas="canvas"></script>
+</head>
+
+<body>
+<canvas id="canvas" resize></canvas>
+<div class="outer">
+	<div class="middle">
+	<div class="inner">
+	<form method="post" action="/cgi-bin/sendmail.py" id="reservation">
+		<table>
+			<tr>
+				<td><input name="name" placeholder="Name" type="text" size="35"></td>
+				<td><input name="platz" placeholder="Plätze" type="text"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input name="email" placeholder="Email" type="email"></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<select name="dates">
+					  <option value="20.09.">20.09.</option>
+					  <option value="21.09.">21.09.</option>
+					  <option value="27.09.">27.09.</option>
+					  <option value="28.09.">28.09.</option>
+					</select>
+				</td>
+				<td align="right">
+					<select name="times">
+					  <option value="19-21">19-21</option>
+					  <option value="21-24">21-24</option>
+					  <option value="19-24">19-24</option>
+					</select>
+				</td>
+				<td align="right">
+					<button name="btn-submit" type="submit" class="buttoni"
+							onclick="alert('Reservation abgeschickt!\nDu erhältst von uns eine Bestätigung.')"
+							style="width:80px">OK
+					</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+</div>
+</div>
+</body>
+</html>

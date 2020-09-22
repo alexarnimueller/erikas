@@ -1,0 +1,149 @@
+/*!
+ * CSS für APV Homepage
+ * Alex Müller / Everest
+ * aktualisiert 11.02.2019
+ */
+
+#header {
+    background-color: #000099;
+}
+
+#wrap {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display: table;
+  position: relative;
+  table-layout: fixed;
+}
+
+body .content {
+  padding-top: 56px;
+  position: relative;
+  z-index: 1000;
+  background: #fff;
+  z-index: 2;
+}
+
+.bg-dark {
+  background-color: #000099 !important;
+}
+
+.btn-flamberg {
+  color: #fff;
+  background-color: #000099;
+  border-color: #000099;
+}
+
+.navbar-toggler {
+  border: 2px solid white;
+}
+
+.navbar.flamberg .navbar-toggler-icon {
+  background-image: url('http://erikas.ch/apv/assets/schwert.png');
+}
+
+/*===========================================================*/
+/* Organigramm */
+/*===========================================================*/
+.tree * {
+  margin: 0;
+  padding: 0;
+}
+
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  -transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  -transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #696969;
+  width: 50%;
+  height: 20px;
+}
+
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #696969;
+}
+
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+
+.tree li:only-child {
+  padding-top: 0;
+}
+
+.tree li:first-child::before, .tree li:last-child::after {
+  border: 0 none;
+}
+
+.tree li:last-child::before {
+  border-right: 2px solid #696969;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #696969;
+  width: 0;
+  height: 20px;
+}
+
+.tree li a {
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: gray;
+  color: #fff;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li a:hover, .tree li a:hover + ul li a {
+  background: gray;
+  color: #000;
+}
+
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before {
+  border-color: #000099;
+}
+

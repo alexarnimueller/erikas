@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Erikas Canape</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Erikas Canape Kitchen Bar Restaurant">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/paper.js"></script>
+    <script type="text/paperscript" src="js/canape2.js" canvas="canvas"></script>
+</head>
+
+<body>
+<canvas id="canvas" resize></canvas>
+<div class="outer">
+	<div class="middle">
+	<div class="inner">
+	<form method="post" action="/cgi-bin/sendmail.py" id="reservation">
+		<table>
+			<tr>
+				<td><input name="name" placeholder="Name" type="text" size="35"></td>
+				<td><input name="platz" placeholder="Plätze" type="text"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input name="email" placeholder="Email" type="email"></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><input name="date" type="radio" value="20.09." checked="checked"> 20.09.</td>
+				<td><input name="date" type="radio" value="21.09."> 21.09.</td>
+				<td><input name="date" type="radio" value="27.09."> 27.09.</td>
+				<td><input name="date" type="radio" value="28.09."> 28.09.</td>
+			</tr>
+			<!--<tr>-->
+				<!--<td><input name="date" type="radio" value="04.10."> 04.10.</td>-->
+				<!--<td><input name="date" type="radio" value="05.10."> 05.10.</td>-->
+				<!--<td><input name="date" type="radio" value="11.10."> 11.10.</td>-->
+				<!--<td><input name="date" type="radio" value="12.10."> 12.10.</td>-->
+			<!--</tr>-->
+			<!--<tr>-->
+				<!--<td><input name="date" type="radio" value="18.10."> 18.10.</td>-->
+				<!--<td><input name="date" type="radio" value="19.10."> 19.10.</td>-->
+				<!--<td><input name="date" type="radio" value="25.10."> 25.10.</td>-->
+				<!--<td><input name="date" type="radio" value="26.10."> 26.10.</td>-->
+			<!--</tr>-->
+			<tr></tr>
+			<tr>
+				<td><input name="time" type="radio" value="19-21" checked="checked"> 19 - 21</td>
+				<td><input name="time" type="radio" value="21-01"> 21 - 01</td>
+				<td><input name="time" type="radio" value="19-01"> 19 - 01</td>
+				<td align="right">
+					<button name="btn-submit" type="submit" class="buttoni"
+							onclick="alert('Reservation abgeschickt!\nDu erhältst von uns eine Bestätigung.')"
+							style="width:80px">OK
+					</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+</div>
+</div>
+</body>
+</html>

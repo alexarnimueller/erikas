@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(315deg, #000000, #666666); 
+    overflow-y: auto;
+}
+
+h1 {
+    display: inline-block;
+    font-family: 'Quicksand';
+    font-weight: 600;
+    font-size: 3.0em;
+    color: #fdbc1c;
+    margin: 0;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    vertical-align: bottom;
+}
+
+h2 {
+    display: inline-block;
+    font-family: 'Quicksand';
+    font-weight: 200;
+    font-size: 1.5em;
+    color: #fdbc1c;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+a {
+    color: #fff;
+    text-decoration-color: #fff;
+    text-decoration-line: none;
+}
+
+li {
+    color: #fff;
+    padding-bottom: 10px;
+    font-size: 1.50em;
+}
+
+p {
+    font-family: 'Courier';
+    color: #fff;
+}
+
+form {
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    color: #fff;
+    font-size: 1.25em;
+    outline: none;
+    border-collapse: collapse;
+}
+
+table tbody tr th td {
+    padding: 3px;
+    vertical-align: center;
+    text-align: center;
+}
+
+th {
+    border-bottom: solid 2px white;
+    padding-bottom: 5px;
+    font-size: 1.25em;
+    border-spacing: 5px;
+}
+
+.input-container {
+    padding: 25px;
+}
+
+.output-container {
+    padding: 25px;
+    position: relative;
+    bottom: 0;
+    left: 2.5%;
+    right: 2.5%;
+}
+
+.canvas-container {
+    text-align: center;
+}
+
+canvas {
+    margin: 10px;
+    text-align: center;
+}
+
+textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 1.5em;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+input[type=button] {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.25em;
+    outline: none;
+}
+
+input[type=radio] {
+    padding: 6px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.5em;
+    outline: none;
+}
+
+input[type=number]{
+    width: 50px;
+}

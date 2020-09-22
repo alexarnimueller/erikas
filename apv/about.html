@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Altpfadfinder Verein der Pfadi Flamberg">
+    <meta name="author" content="Alex Müller v/o Everest">
+    <title>APV Flamberg</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  <!-- JQuery -->
+    <script src="js/bootstrap.bundle.min.js"></script>  <!-- Bootstrap core JS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">  <!-- Bootstrap core CSS -->
+    <link href="css/apv.css" rel="stylesheet">  <!-- custom APV styles -->
+</head>
+<body>
+<div id="wrap">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark flamberg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img class="img-responsive header-image" src="assets/header-logo.png" alt="header logo"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="about.html">Über den APV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="people.html">Who Is Who</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-dark py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-white mt-5 mb-2">Über den APV</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Content -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Struktur</h2>
+            <hr>
+            <p>Der Altpfadfinderverband (APV) ist ein Verein und bezweckt die Erhaltung des Kontaktes zwischen früheren
+                Aktiven der Pfadi Flamberg und die Unterstützung der jetzigen Aktiven. Jeder frühere Aktive der Pfadi
+                Flamberg kann durch den Ausschuss in den APV aufgenommen werden.</p>
+        </div>
+        <div class="col-md-2 order-first order-md-12 mb-4">
+            <h2>User</h2>
+            <hr>
+            <strong>admin@admin.local</strong>
+            <br><a href="users/edit.html">Profil ändern</a>
+            <br><a rel="nofollow" data-method="delete" href="users/sign_out.html">Abmelden</a>
+            <br><a rel="nofollow" data-method="delete" href="users/sign_up.html">Dem APV beitreten</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 mb-8 py-3">
+            <h2>Die Organe des APV</h2>
+            <hr>
+
+            <div class="tree" id="organigramm">
+                <ul>
+                    <li>
+                        <a href="#organigramm">
+                            <div class="container-fluid">
+                                <div class="row py-2">
+                                    <h4>Hauptversammlung des APV (ca. 400 Mitglieder)</h4>
+                                </div>
+                                <div class="row">
+                                    &#9900; Wahl des Obmannes, des Ausschusses und der Rechnungsrevisoren
+                                </div>
+                                <div class="row">
+                                    &#9900; Entgegennahme des Berichtes des Ausschusses und der Rechnungsrevisoren
+                                </div>
+                                <div class="row">
+                                    &#9900; Abnahme der Rechnung und Entlastung des Ausschusses
+                                </div>
+                                <div class="row">
+                                    &#9900; Festsetzung des Jahresbeitrages
+                                </div>
+                                <div class="row">
+                                    &#9900; Änderungen der Statuten
+                                </div>
+                                <div class="row">
+                                    &#9900; Auflösung des APV und Verwendung des vorhandenen Vermögens
+                                </div>
+                                <div class="row">
+                                    &#9900; Behandlung und Beschlussfassung über Anträge des Ausschusses und einzelner
+                                    Mitglieder
+                                </div>
+                            </div>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="./contact.html#ausschuss">
+                                    <div class="container-fluid">
+                                        <div class="row py-2">
+                                            <h4>APV-Ausschuss (5-9 Mitglieder)</h4>
+                                        </div>
+                                        <div class="row">
+                                            &#9900; Alle Befugnisse, die durch die Statuten nicht anderen Organen
+                                            übertragen
+                                            sind <br> (im wesentlichen administrative und koordinative Aufgaben)
+                                        </div>
+                                        <div class="row">
+                                            &#9900; Scheidet ein Mitglied während der Amtsperiode aus, so ergänzt sich
+                                            der
+                                            Ausschuss selbst
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#organigramm">
+                                    <div class="container-fluid">
+                                        <div class="row py-2">
+                                            <h4>Rechnungsrevisoren (2 Mitglieder)</h4>
+                                        </div>
+                                        <div class="row">
+                                            &#9900; Jährliche Überprüfung der Buchhaltung des APV-Kassiers
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <h2>Statuten</h2>
+            <hr>
+            <h3>I. Allgemeines</h3>
+            <ol>
+                <li>
+                    Der Altpfadfinderverband der Pfadfinderabteilung Flamberg
+                    (APV) ist ein Verein im Sinne von Art. 60 ff. ZGB mit Sitz
+                    am Wohnort des Obmannes. Er bezweckt die Erhaltung der Kameradschaft
+                    zwischen früheren Aktiven der Pfadfinderabteilung Flamberg
+                    und die Unterstützung dieser Pfadfinderabteilung.
+                </li>
+                <li>
+                    Die Geschäftsperiode umfasst vier Jahre. Sie läuft
+                    jeweils am Ende jedes Schaltjahres ab.
+                </li>
+                <li>
+                    Die Bekanntmachungen des APV einschliesslich der Einladung
+                    zur Haupversammlung der Mitglieder und zu den Mitgliederhöcken
+                    erfolgen rechtsgültig auf dem Zirkulationsweg oder durch
+                    einmalige Publikation in der Abteilungszeitung "Flamberg".
+                </li>
+            </ol>
+            <h3>II. Mitgliedschaft</h3>
+            <ol>
+                <li>
+                    Jeder frühere Aktive der Pfadfinderabteilung Flamberg
+                    kann durch den Ausschuss in den APV aufgenommen werden.
+                </li>
+                <li>
+                    Mitglieder, die mit der Bezahlung von zwei Jahresbeiträgen
+                    länger als ein Jahr im Rückstand sind, können
+                    vom Ausschuss ausgeschlossen werden. Im Übrigen kann
+                    der Ausschluss von Mitgliedern nur nach Massgabe des Gesetzes
+                    vorgenommen werden.
+                </li>
+                <li>
+                    Die persönliche Haftbarkeit der Mitglieder für
+                    die Verbindlichkeiten des APV ist ausgeschlossen.
+                </li>
+            </ol>
+            <h3>III. Organisation</h3>
+            <ol>
+                <li>
+                    Die Organe des APV sind:
+                    <ul>
+                        <li>die Hauptversammlung der Mitglieder</li>
+                        <li>der Ausschuss</li>
+                        <li>die Rechnungsrevisoren</li>
+                    </ul>
+                    Über Anträge kann die Hauptversammlung oder der
+                    Ausschuss auch auf schriftlichem Wege Beschluss fassen. (Abs. 2
+                    gemäss Beschluss der a.o. Hauptversammlung vom 5. Juni 1964.
+                </li>
+                <li>
+                    Die ordentliche Hauptversammlung der Mitglieder wird innerhalb
+                    von 6 Monaten nach Ende jeder Geschäftsperiode vom Ausschuss
+                    einberufen; ausserordentliche Hauptversammlungen nach Bedarf
+                    oder auf Verlangen von 1/10 der Mitglieder.
+                </li>
+                <li>
+                    Der Hauptversammlung der Mitglieder stehen die folgenden Befugnisse zu:
+                    <ul>
+                        <li>Wahl des Obmannes, des Ausschusses und der Rechnungsrevisoren</li>
+                        <li>Entgegennahme des Berichtes des Ausschusses und der Rechnungsrevisoren</li>
+                        <li>Abnahme der Rechnung und Entlastung des Ausschusses</li>
+                        <li>Festsetzung des Jahresbeitrages</li>
+                        <li>änderung der Satzungen</li>
+                        <li>Auflösung des APV und Verwendung des in diesem Zeitpunkt vorhandenen Vermögens</li>
+                        <li>Behandlung und Beschlussfassung über Anträge des Ausschusses und einzelner Mitglieder</li>
+                    </ul>
+                </li>
+                <li>
+                    Der Ausschuss besteht aus fünf bis neun Mitgliedern, welche
+                    ehrenamtlich tätig sind und deren Amtsdauer bei Ablauf der
+                    Geschäftsperiode endet. Der Abteilungsleiter der Pfadfinderabteilung
+                    Flamberg ist von Amtes wegen Mitglied des Ausschusses. Mit Ausnahme des
+                    Obmannes konstituiert sich der Ausschuss selbst. Er hat alle
+                    Befugnisse, die durch die Satzungen nicht anderen Organen übertragen
+                    sind. Scheidet ein Mitglied während einer Amtsperiode aus, so kann sich
+                    der Ausschuss für den Rest der Amtsperiode selbst ergänzen.
+                </li>
+                <li>
+                    Die Amtszeit der beiden Rechnungsrevisoren fällt mit der vierjährigen
+                    Geschäftsperiode des APV zusammen.
+                </li>
+            </ol>
+            <p>
+                Die vorliegenden Satzungen sind durch die Hauptversammlung der Mitglieder vom
+                30. April 1958 genehmigt worden und treten unter dem gleichen Datum in
+                Kraft.
+            </p>
+            <p>
+                Zürich, den 30. April 1958
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark mt-3">
+    <div class="container">
+        <p class="m-0 text-center text-white">2019 &copy; APV Flamberg</p>
+        <p class="m-0 text-center text-white">Tobeleggweg 4 | 8049 Zürich</p>
+        <p class="m-0 text-center text-white"><a href="mailto:kontakt@apvflamberg.ch">kontakt@apvflamberg.ch</a></p>
+    </div>
+</footer>
+</div>
+</body>
+</html>
