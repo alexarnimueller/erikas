@@ -254,7 +254,7 @@ function onFrame(event) {
 			var point = heartPath.getPointAt(length);
 			if (point)
 				boids[i].arrive(point);
-			var vector = view.center - {x: circle.radius, y: circle.radius} - circle.position;
+			var vector = view.center - textErika.position;
 			circle.position += vector / 100;
 			textErika.position += vector / 100;
 		}
@@ -263,7 +263,7 @@ function onFrame(event) {
 	var vector = destination - textErika.position;
 	textErika.position += vector / 100;
 	circle.position += vector / 100;
-	if (vector.length < 25) {
+	if (vector.length < 10) {
 		destination = Point.random() * view.size;
 	}
 }
